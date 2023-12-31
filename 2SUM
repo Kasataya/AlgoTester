@@ -11,8 +11,37 @@ def sum2(arr, target):
             if(arr[i] + arr[e] == target):
                 return [i,e]
     return []
+#O(n) Time Complexity
+#O(n) Space Complexity
+def sum22(arr,target):
+    dic = {}
+    for i in range(len(arr)):
+        e = target - arr[i]
+        if e in dic:
+            return [arr[i], e]
+        else:
+            dic[arr[i]] = True
+    return []
+#O(nLogn) Time Complexity
+#O(1) Space complexity
+def sum222(arr,target):
+    arr.sort()
+    highIndex = len(arr) -1
+    LowIndex = 0
+    for i in range(len(arr)):
+        if arr[highIndex] + arr[LowIndex] == target:
+            return [arr[highIndex],arr[LowIndex]]
+        else:
+            if((arr[highIndex] + arr[LowIndex]) > target):
+                highIndex -= 1
+            else:
+                LowIndex += 1
+            
+    return []
+
+
 
 x = int(input("Target: "))
 lists = list(map(int, input("List: ").split()))
 
-print(sum2(lists,x))
+print(sum222(lists,x))

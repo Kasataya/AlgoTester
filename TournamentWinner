@@ -1,0 +1,9 @@
+def tournamentWinner(competitions, results):
+    dic = {}
+    for i in range(len(results)):
+        if(i == 1):
+            dic[competitions[i][0]] += 1
+        else:
+            dic[competitions[i][1]] += 1
+    
+    return ""

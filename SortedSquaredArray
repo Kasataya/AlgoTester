@@ -1,0 +1,19 @@
+
+
+# Time Complexity O(nLogn)
+# Space Complexity O(n)
+def sortedSquaredArray(array):
+    l = []
+    for i in array:
+        l.append(i*i)
+    l.sort()
+    return l
+
+def sortedSquaredArray(array):
+    newL = [0 for i in array]
+    index1 = 0
+    index2 = len(array) - 1
+    for idx in range(len(array)):
+        value = array[idx]
+        sortedSqaures[idx] = value * value
+

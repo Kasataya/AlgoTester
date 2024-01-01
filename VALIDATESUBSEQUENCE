@@ -1,0 +1,29 @@
+
+
+#O(n) time complexity
+#O(1) space complexity
+
+def isValidSubsequence(array,sequence):
+    Index = 0
+    for i in array:
+        if sequence[Index] == i:
+            Index +=1
+            if len(sequence) == Index:
+                return True
+    return False
+
+def isValidSubsequence2(array,sequence):
+    arrayIndex = 0
+    seqIndex = 0
+    while len(array) > arrayIndex and len(sequence) > seqIndex:
+        if(array[arrayIndex] == sequence[seqIndex]):
+            seqIndex += 1
+        arrayIndex += 1
+    return len(sequence) == seqIndex
+
+    
+
+x = list(map(int,input().split()))
+ss = list(map(int,input().split()))
+
+print(isValidSubsequence2(x,ss))

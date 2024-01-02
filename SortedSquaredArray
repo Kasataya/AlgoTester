@@ -9,11 +9,3 @@ def sortedSquaredArray(array):
     l.sort()
     return l
 
-def sortedSquaredArray(array):
-    newL = [0 for i in array]
-    index1 = 0
-    index2 = len(array) - 1
-    for idx in range(len(array)):
-        value = array[idx]
-        sortedSqaures[idx] = value * value
-

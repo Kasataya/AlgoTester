@@ -1,9 +1,15 @@
 def tournamentWinner(competitions, results):
-    dic = {}
-    for i in range(len(results)):
-        if(i == 1):
-            dic[competitions[i][0]] += 1
+    winner = ""
+    scores = {winner: 0}
+    for index, competition in enumerate(competitions):
+        homeTeam = competition[0]
+        awayTeam = competition[1]
+        gameResult = homeTeam if results[index] == 1 else awayTeam
+        if gameResult in scores:
+            scores[gameResult] += 1
         else:
-            dic[competitions[i][1]] += 1
-    
-    return ""
+            scores[gameResult] = 0
+            scores[gameResult] += 1
+        if scores[gameResult] > scores[winner]:
+            winner = gameResult
+    return winner
